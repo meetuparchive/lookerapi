@@ -1,0 +1,8 @@
+[distutils]
+index-servers =
+    nexus3
+
+[nexus3]
+repository = https://nexus3.data.meetuphq.io/repository/lookerapi/
+username = {{ NEXUS3_USER }}
+password = {{ NEXUS3_PASS }}

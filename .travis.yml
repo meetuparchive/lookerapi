@@ -1,0 +1,25 @@
+dist: xenial
+language: python
+python: 
+  - "3.5" 
+
+services:
+  - docker
+
+env:
+  global:
+  - CI_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+  - AWS_DEFAULT_REGION=us-east-1
+
+before_install:
+  - pip install flake8
+  - pip install envtpl
+  - envtpl < pypirc_template > ~/.pypirc
+  - pip install setuptools
+  - pip install twine
+
+script:
+  - >
+    if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+      make publish;
+    fi
