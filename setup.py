@@ -31,7 +31,7 @@ VERSION = "3.0.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRED = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 here = os.path.abspath(os.path.dirname(__file__))
 
